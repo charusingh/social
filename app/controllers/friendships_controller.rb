@@ -16,6 +16,8 @@ def all_friends
 @friends=User.find(current_user.friendships.map(&:friend_id))
 end
 
+
+
   def destroy
     @friendship = current_user.friendships.find(params[:id])
     @friendship.destroy

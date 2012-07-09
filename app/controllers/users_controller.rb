@@ -47,6 +47,7 @@ class UsersController < ApplicationController
     users.flatten!
     @users = User.where(["id NOT IN (?)",(users)])
   end
+           
 
   def add
     current_user.friendships.build(:user_id => current_user.id, :friend_id => params[:friend_id])
@@ -57,8 +58,8 @@ class UsersController < ApplicationController
     end    
   end
 
+
 end
-  
 
 
 
