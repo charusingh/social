@@ -1,0 +1,15 @@
+<h1>changing ur password below!!</h1>
+
+<%= form_for(@us, :url => {:controller => 'users', :action => 'pass_change'}) do |f| %>
+
+<div><%= f.label :enter_old_password %><br /></div>
+  <%= f.password_field :old_password %>
+
+<div><%= f.label :enter_new_password %><br /></div>
+  <%= f.password_field :password %>
+
+<div><%= f.label :new_confirm_password %><br /></div>
+  <%= f.password_field :password_confirmation %>
+<div><%= f.submit "save" %></div>
+
+  <%end%>

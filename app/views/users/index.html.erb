@@ -1,0 +1,21 @@
+<h1><%= current_user.email %></h1>
+
+
+<div id="users">
+  <% @users.each do |user| %>
+    <div id="user">
+
+      <%= image_tag(user.avtar.url(:thumb))%>
+      <%= user.firstname %> <%= user.lastname%>
+
+
+      <%= button_to 'add as friend',{:action => :add, :friend_id => user.id},:remote=>true %>
+
+    </div>
+
+
+
+  <% end %>
+
+</div>
+

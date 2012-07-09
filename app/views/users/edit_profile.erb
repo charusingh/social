@@ -1,0 +1,29 @@
+<h1>editing...</h1>
+
+
+<%= form_for(@us, :url => {:controller => 'users',
+    :action => 'edit_profile'},:html => { :multipart => true }) do |f| %>
+<p>
+      <b> attachment </b><br/>
+      <%= f.file_field :avtar %>
+    </p>
+  <br/>
+<div><%= f.label :FIRSTNAME %><br />
+  <%= f.text_field :firstname %></div>
+
+<div><%= f.label :LASTNAME %><br />
+  <%= f.text_field :lastname %></div>
+
+<div><%= f.label :EDUCATION_DETAILS %><br />
+  <%= f.text_field :education_details %></div>
+
+<div><%= f.label :CONTACT %><br />
+  <%= f.text_field :contact %></div>
+
+  <div><%= f.label :EMAIl %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.submit "save" %></div>
+<% end %>
+
+
