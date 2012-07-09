@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Social</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+  <title>UR SOCIAL BOOK WELCOMES U</title>
+  <%= stylesheet_link_tag  :application %>
+  <%= javascript_include_tag :application %>
+  <%= csrf_meta_tag %>
 </head>
-<body>
 
+<body id ="store">
+ 
+  <div id= "banner"></div>
+  
+
+    <div id="side" >
+
+   </div>
+  <p class="notice"><%=  notice %></p>
+  <p class="alert"><%=  alert %></p>
 <%= yield %>
 
 </body>
