@@ -1,5 +1,13 @@
-<% @common_friends.each do |common_friend| %>
+<h1>profile!!</h1>.
+
+<%=render 'users/profile',:object=>@us%>
+<h2>mutual friends!!</h2>
+
+<% @mutual_friends.each do |mutual| %>
          
-      <%= common_friend.firstname %> <%= common_friend.lastname%>
-    <%end%>
+  <%= mutual.firstname%>
+  <%#= mutual.lastname%>
+
+<%end%>
+
     

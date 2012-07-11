@@ -6,7 +6,8 @@ Social::Application.routes.draw do
   get "home/index"
 
   match "/users/edit_profile/:id" => "users#edit_profile", :as => "edit_profile"
-
+match "/friendships/common_with/:id" => "friendships#common_with", :as => "common_with"
+match "/friendships/all_friends/:id" => "friendships#all_friends", :as => "all_friends"
   devise_for :users
 
   

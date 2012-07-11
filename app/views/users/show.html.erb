@@ -1,34 +1,12 @@
 
-<h1>UR PROFILE PAGE!!</h1>
-<p>  
-  <%= image_tag @us.avtar.url(:medium) %>
-</p>
-<p>
-  <b>FIRSTNAME:-</b>
-  <%= @us.firstname %>
-</p>
-
-<p>
-  <b>LASTNAME:-</b>
-  <%= @us.lastname%>
-</p>
-
-<p>
-  <b>EDUCATION_DETAILS:-</b>
-  <%= @us.education_details %>
-</p>
-
-<p>
-  <b>CONTACT:-</b>
-  <%= @us.contact %>
-</p>
+<%=render 'users/profile'%>
 
 
 
 <%= link_to 'Edit_profile', edit_profile_path(@us.id) %>
 <%= link_to 'Change Password', "/users/pass_change" %>
 <%= link_to "sign out", destroy_user_session_path, :method => :delete %>
-<%= link_to 'make friends', "/users/index" %>
+
 <%= link_to 'all friends', "/friendships/all_friends" %>
-<%= link_to 'common friends', "/friendships/common_with" %>
+
 

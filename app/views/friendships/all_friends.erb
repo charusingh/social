@@ -1,6 +1,8 @@
 
   <% @friends.each do |friend| %>
          <%= image_tag(friend.avtar.url(:thumb))%>
-      <%= friend.firstname %> <%= friend.lastname%>
-    <%end%>
+   
+<%=  link_to friend.firstname+" "+friend.lastname,"/friendships/common_with"%>
+<%end%>
+
     
