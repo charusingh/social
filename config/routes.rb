@@ -1,4 +1,10 @@
-Social::Application.routes.draw do
+Social::Application.routes.draw do ||
+
+    #map.resources :posts, :has_many => :comments
+  #
+  #  map.connect ':controller/:action/:id'
+  #  map.connect ':controller/:action/:id.:format'
+  #  map.root :controller => "post"
 
 
 
@@ -6,9 +12,19 @@ Social::Application.routes.draw do
   get "home/index"
 
   match "/users/edit_profile/:id" => "users#edit_profile", :as => "edit_profile"
-match "/friendships/common_with/:id" => "friendships#common_with", :as => "common_with"
-match "/friendships/all_friends/:id" => "friendships#all_friends", :as => "all_friends"
+  match "/friendships/common_with/:id" => "friendships#common_with", :as => "common_with"
+  match "/friendships/all_friends/" => "friendships#all_friends", :as => "all_friends"
+  match "/posts/show/:post_id" => "posts#show", :as => "show"
+  match "/likes/create" => "likes#create", :as => "likes_create"
+  match "/likes/destroy/:id" => "likes#destroy", :as => "likes_destroy"
+  match "/likes/like_people" => "likes#like_people", :as => "likes_people"
+  match "/event/create_event" => "events#create_event", :as =>"create_event"
+  match "/event/select_friends" => "events#select_friends", :as =>"select_friends"
   devise_for :users
+
+
+
+
 
   
   # The priority is based upon order of creation:
@@ -54,17 +70,17 @@ match "/friendships/all_friends/:id" => "friendships#all_friends", :as => "all_f
   # Sample resource route within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
-   # (app/controllers/admin/products_controller.rb)
+  # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'home#index'
+  root :to => 'posts#index'
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-   match ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))'
 end

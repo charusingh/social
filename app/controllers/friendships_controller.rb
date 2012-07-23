@@ -30,6 +30,9 @@ def common_with
 group('friend_id HAVING COUNT(friend_id)>=2')
 end
 
+
+
+
   def destroy
     @friendship = current_user.friendships.find(params[:id])
     @friendship.destroy

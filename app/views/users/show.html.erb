@@ -1,12 +1,1 @@
-
-<%=render 'users/profile'%>
-
-
-
-<%= link_to 'Edit_profile', edit_profile_path(@us.id) %>
-<%= link_to 'Change Password', "/users/pass_change" %>
-<%= link_to "sign out", destroy_user_session_path, :method => :delete %>
-
-<%= link_to 'all friends', "/friendships/all_friends" %>
-
-
+<%=render 'users/profile',:object=>@us%>
